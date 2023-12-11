@@ -4,7 +4,7 @@
 
   sources:
     - ansible.eda.webhook:
-        host: 0.0.0.0
+        host: 10.0.0.19
         port: 5000
 
   rules:
@@ -12,5 +12,5 @@
       condition: event.payload.message == "sakana"
       action:
         run_job_template:
-          name: Demo Job Template    # 実行したいジョブテンプレート名
+          name: debug_eda    # 実行したいジョブテンプレート名
           organization: Default
