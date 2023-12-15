@@ -1,1 +1,16 @@
+---
+- name: Hello Events
+  hosts: all
 
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 6000
+
+  rules:
+    - name: test Hello
+      condition: event.payload.message == "test2"
+      action:
+        run_workflow_template:
+          name: test_workflow
+          organization: Default
