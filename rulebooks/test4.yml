@@ -12,5 +12,5 @@
       condition: event.payload.message == "test"
       action:
         run_workflow_template:
-          name: test_eda
+          name: test_workflow
           organization: Default
