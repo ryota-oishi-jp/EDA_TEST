@@ -8,9 +8,8 @@
         port: 6000
 
   rules:
-    - name: test Hello
-      condition: event.payload.message == "test2"
+    - name: test playbook
+      condition: event.payload.message == "test3"
       action:
-        run_workflow_template:
-          name: test_workflow
-          organization: Default
+        run_playbook:
+          name: test_eda
