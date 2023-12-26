@@ -1,0 +1,16 @@
+---
+- name: Hello Events
+  hosts: all
+
+  sources:
+    - ansible.eda.webhook:
+        host: 127.0.0.0/8
+        port: 6000
+
+  rules:
+    - name: test playbook
+      condition: event.name == "test"
+      action:
+        run_workflow_template:
+          name: test_workflow
+          organization: Default
