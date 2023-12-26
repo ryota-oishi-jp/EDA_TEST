@@ -1,0 +1,10 @@
+---
+- name: debug msg play
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: debug msg
+      ansible.builtin.debug:
+        msg: HELLO!!
