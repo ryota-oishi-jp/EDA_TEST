@@ -14,5 +14,10 @@
        - run_job_template:
            name: debug_eda
            organization: Default
+
+      - name: Say Hello2
+        condition: event.payload.message == "sakana2"
+        action:
+         - run_job_template:
            name: debug_eda2
            organization: Default
