@@ -14,6 +14,5 @@
        - run_job_template:
            name: debug_eda
            organization: Default
-       - run_job_template:
            name: debug_eda2
            organization: Default
