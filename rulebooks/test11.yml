@@ -12,8 +12,8 @@
       condition: event.payload.message == "sakana"
       action:
        - run_job_template:
-           name: debug_eda
+           name: debug_eda2
            organization: Default
        - run_job_template:
-           name: debug_eda2
+           name: debug_eda
            organization: Default
