@@ -4,13 +4,20 @@
 
   sources:
     - ansible.eda.webhook:
-        host: 127.0.0.0/8
-        port: 6000
+        host: 0.0.0.0
+        port: 5050
 
   rules:
-    - name: test playbook
-      condition: event.name == "test"
+    - name: Say Hello1
+      condition: event.payload.message == "sakana"
       action:
-        run_workflow_template:
-          name: test_workflow
-          organization: Default
+       - run_job_template:
+           name: debug_eda
+           organization: Default
+
+      - name: Say Hello2
+        condition: event.payload.message != "sakana"
+        action:
+         - run_job_template:
+           name: debug_eda2
+           organization: Default
