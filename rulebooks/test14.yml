@@ -1,0 +1,18 @@
+---
+- name: Hello Events
+  hosts: all
+
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 6000
+
+  rules:
+    - name: test playbook
+      condition: event.payload.message == "test"
+      action:
+        post_event:
+          ruleset: Test
+          event:
+            name: test
+            stetus: up
