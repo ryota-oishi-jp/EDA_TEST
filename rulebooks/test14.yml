@@ -14,5 +14,5 @@
         post_event:
           ruleset: Test
           event:
-            name: test
+            name: debug_eda2
             stetus: hallow
