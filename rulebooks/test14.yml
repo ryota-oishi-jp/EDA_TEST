@@ -15,4 +15,4 @@
           ruleset: Test
           event:
             name: test
-            stetus: up
+            stetus: hallow
