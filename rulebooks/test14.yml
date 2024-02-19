@@ -12,7 +12,3 @@
       condition: event.payload.message == "test"
       action:
         post_event:
-          ruleset: Test
-          event:
-            name: debug_eda2
-            stetus: hallow
