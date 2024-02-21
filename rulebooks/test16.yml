@@ -1,0 +1,16 @@
+---
+- name: Hello Events
+  hosts: all
+
+  sources:
+    - ansible.eda.watchdog:
+        - host: 0.0.0.0
+          port: 5000
+    
+  rules:
+    - name: Say Hello1
+      condition: event.payload.message == "sakana"
+      action:
+        run_workflow_template:
+          name: test_workflow
+          organization: Default
